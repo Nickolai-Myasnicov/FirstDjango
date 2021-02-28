@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<ol>
+    {% for item in items %}
+        <!-- <a href="/item/{{ item.id }}"> -->
+        <a href="{% url 'item-page' item.id %}">
+            <li class="item-block"> name: {{ item.name }} quantity: {{ item.quantity }}</li>
+        </a>
+    {% endfor %}
+</ol>
+</body>
+</html>
